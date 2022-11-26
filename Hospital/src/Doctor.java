@@ -1,40 +1,11 @@
-public class Doctor {
-    private String firstName;
-    private String lastName;
-    private int age;
+public class Doctor extends Person{
     private String specialization;
     private int yearsOfExperience;
 
-    public String getFirstName() {
-        return firstName;
-    }
-
     public Doctor(String firstName, String lastName, int age, String specialization, int yearsOfExperience) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.age = age;
+        super(firstName, lastName, age);
         this.specialization = specialization;
         this.yearsOfExperience = yearsOfExperience;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
     }
 
     public String getSpecialization() {

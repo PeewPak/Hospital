@@ -1,4 +1,4 @@
-public class Patient {
+public class Patient extends Person{
     private String firstName;
     private String lastName;
     private int age;
@@ -8,12 +8,9 @@ public class Patient {
     private int bedNumber;
 
     public Patient(String firstName, String lastName, int age, String address) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.age = age;
+        super(firstName, lastName, age);
         this.address = address;
         this.inHospital = false;
-
     }
 
     public int getRoomNumber() {
@@ -38,30 +35,6 @@ public class Patient {
 
     public void setAddress(String address) {
         this.address = address;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
     }
 
     public boolean isInHospital() {
