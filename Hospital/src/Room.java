@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class Room {
     private int roomNumber;
@@ -69,5 +71,19 @@ public class Room {
 
     public void setSpecialization(String specialization) {
         this.specialization = specialization;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Room room)) return false;
+        return getRoomNumber() == room.getRoomNumber() && Arrays.equals(patients, room.patients) && getSpecialization().equals(room.getSpecialization());
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(getRoomNumber(), getSpecialization());
+        result = 31 * result + Arrays.hashCode(patients);
+        return result;
     }
 }
