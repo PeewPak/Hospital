@@ -1,4 +1,6 @@
-public class Person {
+import java.util.Objects;
+
+public abstract class Person {
     private String firstName;
     private String lastName;
     private String gender;
@@ -44,7 +46,22 @@ public class Person {
 
     @Override
     public String toString() {
-        return this.firstName + " + " + this.lastName;
+        return "Person{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Person person)) return false;
+        return getFirstName().equals(person.getFirstName()) && getLastName().equals(person.getLastName());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getFirstName(), getLastName());
     }
 }
 
